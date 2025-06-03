@@ -1,6 +1,7 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 
 const pageTitle = "About Me";
 
@@ -16,6 +17,10 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -53,13 +58,17 @@ const goal = 3;
         {finished && <p>I finished this tutorial!</p>}
 
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
     </body>
 
-    <style>
-        h1 {
-		    font-size: 22px;
-		    margin-top: 0.25em;
-	    }
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+       h1 {
+            color: purple;
+            font-size: 4rem;
+        }
         pre {
             font-family:
                 ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
@@ -71,5 +80,10 @@ const goal = 3;
             background-clip: text;
             margin: 0;
 	    }
+        .skill {
+            color: var(--skillColor);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase);
+        }
     </style>
 </Layout>
