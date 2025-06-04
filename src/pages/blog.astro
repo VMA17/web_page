@@ -1,15 +1,18 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
+<head>
+    <title>Blog</title>
+</head>
 <body>
         <section id="links">
-            <a href="/">Home</a>
-            <a class="button" href="/blog">Blog</a>
-            <a href="/about/">About</a>
+            <Header />
         </section>
         <h1>My Astro Site</h1>
-         <h1>About Me</h1>
+        <h1>About Me</h1>
         <h2>... and my new Astro site!</h2>
 
         <ul>
@@ -21,13 +24,17 @@ import '../styles/global.css';
         <p>I am working through <code><pre>Astro's introductory tutorial</pre></code>. This is the second page on my website, and it's the first one I built myself!</p>
 
         <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+        <Footer />
+        <script>
+            import "../scripts/menu.js";
+        </script>
     </body>
 
     <style>
         h1 {
-		    font-size: 22px;
-		    margin-top: 0.25em;
-	    }
+            font-size: 22px;
+            margin-top: 0.25em;
+        }
         pre {
             font-family:
                 ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
@@ -38,7 +45,7 @@ import '../styles/global.css';
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin: 0;
-	    }
+        }
         code {
             display: inline-block;
             background:
