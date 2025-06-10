@@ -1,16 +1,11 @@
 ---
 import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Blog";
 ---
 
-<head>
-    <title>Blog</title>
-</head>
-<body>
-        <section id="links">
-            <Header />
-        </section>
+<BaseLayout pageTitle={pageTitle}>
+    <body>
         <h1>My Astro Site</h1>
         <h1>About Me</h1>
         <h2>... and my new Astro site!</h2>
@@ -24,72 +19,72 @@ import Footer from '../components/Footer.astro';
         <p>I am working through <code><pre>Astro's introductory tutorial</pre></code>. This is the second page on my website, and it's the first one I built myself!</p>
 
         <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-        <Footer />
         <script>
             import "../scripts/menu.js";
         </script>
     </body>
 
     <style>
-        h1 {
-            font-size: 22px;
-            margin-top: 0.25em;
-        }
-        pre {
-            font-family:
-                ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-                monospace;
-            font-weight: normal;
-            background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 0;
-        }
-        code {
-            display: inline-block;
-            background:
-                linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-                linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-            border-radius: 8px;
-            border: 1px solid transparent;
-            padding: 6px 8px;
-        }
-        #links {
-            display: flex;
-            gap: 16px;
-        }
+            h1 {
+                font-size: 22px;
+                margin-top: 0.25em;
+            }
+            pre {
+                font-family:
+                    ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
+                    monospace;
+                font-weight: normal;
+                background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin: 0;
+            }
+            code {
+                display: inline-block;
+                background:
+                    linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
+                    linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
+                border-radius: 8px;
+                border: 1px solid transparent;
+                padding: 6px 8px;
+            }
+            #links {
+                display: flex;
+                gap: 16px;
+            }
 
-        #links a {
-            display: flex;
-            align-items: center;
-            padding: 10px 12px;
-            color: #111827;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+            #links a {
+                display: flex;
+                align-items: center;
+                padding: 10px 12px;
+                color: #111827;
+                text-decoration: none;
+                transition: color 0.2s;
+            }
 
-        #links a:hover {
-            color: rgb(78, 80, 86);
-        }
+            #links a:hover {
+                color: rgb(78, 80, 86);
+            }
 
-        #links a svg {
-            height: 1em;
-            margin-left: 8px;
-        }
+            #links a svg {
+                height: 1em;
+                margin-left: 8px;
+            }
 
-        #links a.button {
-            color: white;
-            background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-            box-shadow:
-                inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-                inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-            border-radius: 10px;
-        }
+            #links a.button {
+                color: white;
+                background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+                box-shadow:
+                    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+                    inset 0 -2px 0 rgba(0, 0, 0, 0.24);
+                border-radius: 10px;
+            }
 
-        #links a.button:hover {
-            color: rgb(230, 230, 230);
-            box-shadow: none;
-        }
+            #links a.button:hover {
+                color: rgb(230, 230, 230);
+                box-shadow: none;
+            }
 
     </style>
+</BaseLayout>
